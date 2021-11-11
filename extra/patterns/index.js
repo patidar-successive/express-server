@@ -1,7 +1,7 @@
-import diamond from "./diamond";
-import equilateral from "./equilateral";
-export 
-{
-    diamond,
-    equilateral
-};
+import diamond  from './diamond';
+import pyramid from './pyramid';
+import eqoilateral from './equilateral'
+import equilateral from './equilateral';
+pyramid(5,'fullpyramid');
+equilateral();
+diamond();

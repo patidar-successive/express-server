@@ -1,12 +1,4 @@
-let permissions = {
-    'getUsers': {
-        all: ['head-trainer'],
-        read: ['trainee', 'trainer'],
-        write: ['trainer'],
-        delete: [],
-    }
-};
-function hasPermission ( moduleName, role,  permissionsType) {
+export default function hasPermission ( moduleName, role,  permissionsType) {
    
     if (moduleName == 'getUsers' && role == 'head-trainer'){
         return true;
@@ -20,7 +12,4 @@ function hasPermission ( moduleName, role,  permissionsType) {
     else{
         return false;
     }        
-};
-
-let per = hasPermission('getUsers','trainee','read');
-console.log(per);
+}

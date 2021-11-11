@@ -1,3 +1,7 @@
-import { diamond,  pattern} from "./patterns";
-import { validation, utils } from "./utils";
-export {default as extra}from './extra';
+import {diamond, equilateral} from './patterns'
+import {hasPermission, validateuser} from './utils';
+
+const users = ["abcd123@mail.com","ankit@mail.com", "patidar123@mail.com", "ankit", "patidar", "ab123"];
+validateuser(users);
+let per = hasPermission('getUsers','trainee','read');
+console.log(per);
