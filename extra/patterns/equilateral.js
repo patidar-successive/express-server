@@ -1,18 +1,17 @@
-
 export default function equilateral(){
-let n = 10;
-let string = "";
+let size = 10;
+let equilateral = "";
 
-for (let i = 1; i <= n; i++) {
+for (let row = 1; row <= size; row++) {
   
-  for (let j = 1; j <= n - i; j++) {
-    string += " ";
+  for (let col = 1; col <= size - row; col++) {
+    equilateral += " ";
   }
   
-  for (let k = 0; k <  i; k++) {
-    string += "* ";
+  for (let star = 0; star <  row; star++) {
+    equilateral += "* ";
   }
-  string += "\n";
+  equilateral += "\n";
 }
-console.log(string);
+console.log(equilateral);
 }

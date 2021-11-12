@@ -1,61 +1,61 @@
 
 export default function pyramid(row,type){
     if(type=='halfpyramid'){
-        let n = row; 
-    let string = "";
+        let halfpyramid = row; 
+    let pyramid = "";
        
-        for (let i = 1; i <= n; i++) {
-        for (let j = 1; j <= i; j++) {
-       string += j+ ' ';
+        for (let row = 1; row <= halfpyramid; row++) {
+        for (let col = 1; col <= row; col++) {
+            pyramid += col+ ' ';
   }
-  string += "\n";
+  pyramid += "\n";
 }
 
-console.log(string);
+console.log(pyramid);
 
     }
     else if(type == 'fullpyramid'){
-        let n = row;
-            let str = "";
-            for (let i = 1; i <= n; i++) {
-                for (let j = 1; j <= n - i; j++) {
-                    str += "  ";
+        let fullpyramid = row;
+            let pyramid = "";
+            for (let row = 1; row <= fullpyramid; row++) {
+                for (let col = 1; col <= fullpyramid - row; col++) {
+                    pyramid += "  ";
                 }
-                let str1 = i;
-                let str2 = 2*i-2;
-                for (let k = 1; k <= 2 * i - 1; k++) {
-                    if(k<=i){
-                        str += `${str1} `;
+                let str1 = row;
+                let str2 = 2*row-2;
+                for (let k = 1; k <= 2 * row - 1; k++) {
+                    if(k<=row){
+                        pyramid += `${str1} `;
                         str1+=1;
                     }
                     else{
-                        str+=`${str2} `;
+                        pyramid+=`${str2} `;
                         str2 = str2-1;
                     }
                 }
-                str += "\n";
+                pyramid += "\n";
             }
-            console.log(str);
+            console.log(pyramid);
     }
 
     else if(type=='diffPyramid'){
-        let n = row; 
-    let string = "";
+        let diffPyramid = row; 
+    let pyramid = "";
         
-        for (let i = 1; i <= n; i++) {
-            for (let k = 1; k <= 2*n -1 - i; k++) {
-                string +="*";
+        for (let row = 1; row <= diffPyramid; row++) {
+            for (let star = 1; star <= 2*diffPyramid -1 - row; star++) {
+                pyramid +="*";
             }
-        for (let j = 1; j <= i; j++) {
-       string += j+ '*';
+        for (let col = 1; col <= row; col++) {
+            pyramid += j+ '*';
   }
-    for(let j=7;j>= i;j--){
-    string+="*"
+    for(let col=7;col>= row;col--){
+        pyramid+="*"
 }
-    string += "\n";
+pyramid += "\n";
         }
     
-   console.log(string);
+   console.log(pyramid);
 
     }
         }
