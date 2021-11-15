@@ -41,7 +41,7 @@ console.log(pyramid);
                 pyramid +="*";
             }
         for (let col = 1; col <= row; col++) {
-            pyramid += j+ '*';
+            pyramid += col+ '*';
   }
     for(let col=7;col>= row;col--){
         pyramid+="*"
