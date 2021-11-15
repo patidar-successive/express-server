@@ -1,18 +1,14 @@
-
 export default function pyramid(row,type){
     if(type=='halfpyramid'){
         let halfpyramid = row; 
-    let pyramid = "";
-       
+    let pyramid = "";  
         for (let row = 1; row <= halfpyramid; row++) {
         for (let col = 1; col <= row; col++) {
             pyramid += col+ ' ';
   }
   pyramid += "\n";
 }
-
 console.log(pyramid);
-
     }
     else if(type == 'fullpyramid'){
         let fullpyramid = row;
@@ -37,12 +33,10 @@ console.log(pyramid);
             }
             console.log(pyramid);
     }
-
     else if(type=='diffPyramid'){
         let diffPyramid = row; 
-    let pyramid = "";
-        
-        for (let row = 1; row <= diffPyramid; row++) {
+    let pyramid = "";    
+       for (let row = 1; row <= diffPyramid; row++) {
             for (let star = 1; star <= 2*diffPyramid -1 - row; star++) {
                 pyramid +="*";
             }
@@ -54,8 +48,6 @@ console.log(pyramid);
 }
 pyramid += "\n";
         }
-    
    console.log(pyramid);
-
     }
         }
