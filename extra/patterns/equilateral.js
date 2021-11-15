@@ -1,15 +1,14 @@
-let n = 10;
-let string = "";
-// External loop
-for (let i = 1; i <= n; i++) {
-  // printing spaces
-  for (let j = 1; j <= n - i; j++) {
-    string += " ";
+export default function equilateral(){
+let size = 10;
+let equilateral = "";
+for (let row = 1; row <= size; row++) { 
+  for (let col = 1; col <= size - row; col++) {
+    equilateral += " ";
   }
-  // printing star
-  for (let k = 0; k <  i; k++) {
-    string += "* ";
+  for (let star = 0; star <  row; star++) {
+    equilateral += "* ";
   }
-  string += "\n";
+  equilateral += "\n";
 }
-console.log(string);
+console.log(equilateral);
+}
