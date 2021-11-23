@@ -4,4 +4,3 @@ export const errorHandler = (req, res, next)=>{
     status: 500,
     timestamp: "2019-01-08T17:38:21.929Z"});
    }
-   
