@@ -1,11 +1,15 @@
-import { TraineeController } from "./Controller";
+import TraineeController from './Controller';
+import validationHandler from '../../libs/validationHandler'
+import validation from './validation';
 const express = require('express');
 const router = express.Router();
-const trainee_controller = new TraineeController();
+const traineeController = new TraineeController();
 
-router.get('/',trainee_controller.trainee_get_router);
-router.post('/',trainee_controller.trainee_get_router);
-router.put('/',trainee_controller.trainee_get_router);
-router.delete('/',trainee_controller.trainee_get_router);
+router.route('/')
+.get(validationHandler(validation.get),traineeController.traineeGetRouter)
+.post(validationHandler(validation.create),traineeController.traineePostRouter)
+.put(validationHandler(validation.update),traineeController.traineePutRouter)
+router.route('/:id')
+.delete(validationHandler(validation.delete),traineeController.traineeDeleteRouter)
  
 export default router; 
