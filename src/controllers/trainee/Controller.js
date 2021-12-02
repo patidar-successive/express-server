@@ -18,5 +18,4 @@ class TraineeController{
             res.send('Got a DELETE request at about')
         };
     }
-
 export default TraineeController;
