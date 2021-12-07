@@ -67,8 +67,20 @@ const validationHandler = (config) => (req, res, next) => {
               }
             }
           case 'regex':
-            if(typeof input != 'undefined'){
-              let result = /^[a-zA-Z ]+$/.test(input);
+            if(typeof input != 'undefined') {
+              if (key == 'email'){
+              let emailregx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(input);
+              if(emailregx == true){
+                break;
+              }
+              else{
+                errMsg.push(`${key} is not valid`);
+                flag = true;
+                break;
+              }
+            }
+            else {
+            let result = /^[a-zA-Z ]+$/.test(input);
               if(result == true){
                 break;
               }
@@ -78,6 +90,7 @@ const validationHandler = (config) => (req, res, next) => {
                 break;
               }
             }
+          } 
           case 'custom':
             if(input != ""){
               break;
