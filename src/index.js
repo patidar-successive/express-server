@@ -1,4 +1,4 @@
-import { Server } from './server';
-import {configuration} from './config/configuration';
-let myserver = new Server(configuration);
+const Server = require("./server");
+const configuration = require('./config/configuration');
+const myserver = new Server(configuration);
 myserver.bootstrap();
