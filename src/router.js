@@ -1,10 +1,10 @@
 import { traineerouter } from "./controllers/trainee/index";
-//import router from "./controllers/trainee/routes";
 import { userrouter } from "./controllers/user/index"
+import routers from "./repositories/user/routes";
 const express = require('express');
 const mainRouter = express.Router();
-
 mainRouter.use('/trainee',traineerouter);
-mainRouter.use('/login',userrouter);
+mainRouter.use('/user',userrouter);
+mainRouter.use('/users',routers);
 
 export default mainRouter;

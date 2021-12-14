@@ -3,7 +3,7 @@ import {errorHandler} from './libs/routes/errorHandler';
 import {notFound} from './libs/routes/notFoundRoute';
 import { default as mainRouter } from './router';
 import Database from './libs/Database';
-var DbUrl = require('dotenv').config().parsed.MONGO_URL;
+let DbUrl = require('dotenv').config().parsed.MONGO_URL;
 require('dotenv').config();
 const express = require('express');
 const app = express();
@@ -12,8 +12,7 @@ const bodyParser = require('body-parser');
  
 class Server{
     constructor(config){
-        console.log(config.configuration.port);
-        app.listen(config.configuration.port);
+        this.run(config.configuration.port);
     }
     setupRoutes(){
         app.get("/",function (req, res) {
@@ -25,22 +24,20 @@ class Server{
             res.send('I am Okay!');
         });
         app.use(mainRouter);
-        //app.use(errorHandler);
         app.use(notFound);
-    }
-    bootstrap(){
-        this.run();
-        this.setupRoutes();
-        this.initBodyParser();
-    }
-    async run(){
-        const res  = await Database.open(DbUrl);
-        if (res){
-            app.listen(config);
-        }
     }
     initBodyParser(){
         app.use(bodyParser.urlencoded({ extended: true }));
     }
+    bootstrap(){
+        this.setupRoutes();
+        this.initBodyParser();
+    }
+    async run(config){
+        let res  = await Database.open(DbUrl);
+        if (res){
+            app.listen(config);
+        }
+    }    
 }
 module.exports = Server;
