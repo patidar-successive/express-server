@@ -1,25 +1,23 @@
-let n = 5;
-    let string = "";
-    // Upside pyramid
-    for (let i = 1; i <= n; i++) {
-      for (let j = n; j > i; j--) {
-        string += " ";
+export default function diamond(){
+let size = 5;
+    let diamond = "";
+    for (let row = 1; row <= size; row++) {
+      for (let col = size; col > row; col--) {
+        diamond += " ";
+      }       
+        for (let space = 0; space < row; space++) {
+        diamond += "* ";
       }
-       // printing star
-      for (let k = 0; k < i; k++) {
-        string += "* ";
-      }
-      string += "\n";
+        diamond += "\n";
     }
-    // downside pyramid
-    for (let i = 0; i <= n-1 ; i++) {
-      for (let j = 0; j < i; j++) {
-        string += " ";
+        for (let row = 0; row <= size - 1 ; row++) {
+        for (let col = 0; col < row; col++) {
+        diamond += " ";
       }
-      // printing star
-      for (let k = (n - i); k > 0; k--) {
-        string += "* ";
+        for (let space = (size - row); space > 0; space--) {
+        diamond += "* ";
       }
-      string += "\n";
+        diamond += "\n";
     }
-    console.log(string);
+    console.log(diamond);
+  }
