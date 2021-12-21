@@ -10,7 +10,7 @@ export const seed = async (req, res, next) => {
       name: 'ankit',
       password: hash,
       role: 'head-trainer',
-      userId: 'rohit',
+      userId: 'ankit',
     };
       try {
         const count = await users.countDocuments();

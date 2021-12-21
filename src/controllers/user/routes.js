@@ -7,6 +7,6 @@ const express = require('express');
 const router = express.Router();
 const userController = new UserController();
 
-router.route('/login')
-.post(validationHandler(validation.login),userController.login)
+router.route('/')
+.post(validationHandler(validation.login),userController.login,authMiddleWare('getUsers','all'))
 export default router;
